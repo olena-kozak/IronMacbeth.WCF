@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.BFF", "IronMacbeth.BFF\IronMacbeth.BFF.csproj", "{9006D147-1DF2-429F-B14B-F29814102AB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.Client", "IronMacbeth.Client\IronMacbeth.Client.csproj", "{87468F18-40B7-4C6A-95B6-E799C9BE0BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1555EB99-FD12-48D7-9EC1-4026174BF347}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IronMacbeth.BFF.Database", "IronMacbeth.BFF.Database\IronMacbeth.BFF.Database.sqlproj", "{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.BFF.Contract", "IronMacbeth.BFF.Contract\IronMacbeth.BFF.Contract.csproj", "{7147F8FD-500B-4BD9-97B2-3AD28C2496E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IronMacbeth.UserManagement", "IronMacbeth.UserManagement", "{EF668A48-9541-4FED-A02C-B22A1B72372C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.Common", "IronMacbeth.Common\IronMacbeth.Common.csproj", "{0A5CF019-2FD7-464C-B9E4-3DBE9432AD05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.UserManagement", "IronMacbeth.UserManagement\IronMacbeth.UserManagement\IronMacbeth.UserManagement.csproj", "{6A35E59A-DB7D-442E-AA46-CE356F171F2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.UserManagement.Contract", "IronMacbeth.UserManagement\IronMacbeth.UserManagement.Contract\IronMacbeth.UserManagement.Contract.csproj", "{AAB2111A-8B50-43CE-BF1A-1C9734DE51B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IronMacbeth.FileStorage", "IronMacbeth.FileStorage", "{56D59DE4-CDB8-4552-AA8C-BD1B64CBE5C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.FileStorage.Contract", "IronMacbeth.FileStorage\IronMacbeth.FileStorage.Contract\IronMacbeth.FileStorage.Contract.csproj", "{D0B633D8-0BCF-490A-A858-0C45F0F92949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronMacbeth.FileStorage", "IronMacbeth.FileStorage\IronMacbeth.FileStorage\IronMacbeth.FileStorage.csproj", "{F8703621-4912-4E27-A748-11585CB974E3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IronMacbeth.FileStorage.Database", "IronMacbeth.FileStorage.Database\IronMacbeth.FileStorage.Database.sqlproj", "{6BE30C82-3148-412D-8265-2518D827F46A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IronMacbeth.UserManagement.Database", "IronMacbeth.UserManagement.Database\IronMacbeth.UserManagement.Database.sqlproj", "{95A81734-E77D-4638-9AC5-C1CBCEB8078E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9006D147-1DF2-429F-B14B-F29814102AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9006D147-1DF2-429F-B14B-F29814102AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9006D147-1DF2-429F-B14B-F29814102AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9006D147-1DF2-429F-B14B-F29814102AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87468F18-40B7-4C6A-95B6-E799C9BE0BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87468F18-40B7-4C6A-95B6-E799C9BE0BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87468F18-40B7-4C6A-95B6-E799C9BE0BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87468F18-40B7-4C6A-95B6-E799C9BE0BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7147F8FD-500B-4BD9-97B2-3AD28C2496E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7147F8FD-500B-4BD9-97B2-3AD28C2496E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7147F8FD-500B-4BD9-97B2-3AD28C2496E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7147F8FD-500B-4BD9-97B2-3AD28C2496E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A5CF019-2FD7-464C-B9E4-3DBE9432AD05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A5CF019-2FD7-464C-B9E4-3DBE9432AD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A5CF019-2FD7-464C-B9E4-3DBE9432AD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A5CF019-2FD7-464C-B9E4-3DBE9432AD05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A35E59A-DB7D-442E-AA46-CE356F171F2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A35E59A-DB7D-442E-AA46-CE356F171F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A35E59A-DB7D-442E-AA46-CE356F171F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A35E59A-DB7D-442E-AA46-CE356F171F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB2111A-8B50-43CE-BF1A-1C9734DE51B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB2111A-8B50-43CE-BF1A-1C9734DE51B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB2111A-8B50-43CE-BF1A-1C9734DE51B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB2111A-8B50-43CE-BF1A-1C9734DE51B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B633D8-0BCF-490A-A858-0C45F0F92949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B633D8-0BCF-490A-A858-0C45F0F92949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B633D8-0BCF-490A-A858-0C45F0F92949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B633D8-0BCF-490A-A858-0C45F0F92949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8703621-4912-4E27-A748-11585CB974E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8703621-4912-4E27-A748-11585CB974E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8703621-4912-4E27-A748-11585CB974E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8703621-4912-4E27-A748-11585CB974E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE30C82-3148-412D-8265-2518D827F46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE30C82-3148-412D-8265-2518D827F46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE30C82-3148-412D-8265-2518D827F46A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6BE30C82-3148-412D-8265-2518D827F46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE30C82-3148-412D-8265-2518D827F46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE30C82-3148-412D-8265-2518D827F46A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE2B329D-C09B-4850-8CB9-E2CBBEE080A3} = {1555EB99-FD12-48D7-9EC1-4026174BF347}
+		{6A35E59A-DB7D-442E-AA46-CE356F171F2D} = {EF668A48-9541-4FED-A02C-B22A1B72372C}
+		{AAB2111A-8B50-43CE-BF1A-1C9734DE51B3} = {EF668A48-9541-4FED-A02C-B22A1B72372C}
+		{D0B633D8-0BCF-490A-A858-0C45F0F92949} = {56D59DE4-CDB8-4552-AA8C-BD1B64CBE5C0}
+		{F8703621-4912-4E27-A748-11585CB974E3} = {56D59DE4-CDB8-4552-AA8C-BD1B64CBE5C0}
+		{6BE30C82-3148-412D-8265-2518D827F46A} = {1555EB99-FD12-48D7-9EC1-4026174BF347}
+		{95A81734-E77D-4638-9AC5-C1CBCEB8078E} = {1555EB99-FD12-48D7-9EC1-4026174BF347}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA80DFAF-D9E9-4026-9512-B932987D4F8F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:home="clr-namespace:IronMacbeth.Client.VVM.Home"
+                    xmlns:book ="clr-namespace:IronMacbeth.Client.VVM.BookVVM"
+                    xmlns:bookInfo ="clr-namespace:IronMacbeth.Client.VVM.BookInfoVVM"
+                    xmlns:searchVvm ="clr-namespace:IronMacbeth.Client.VVM.SearchPageViewModel"
+                    xmlns:searchResults ="clr-namespace:IronMacbeth.Client.VVM.SearchResultsVVM"
+                    xmlns:orderVvm ="clr-namespace:IronMacbeth.Client.VVM.MyOrdersVVM"
+                    xmlns:adminOrder ="clr-namespace:IronMacbeth.Client.VVM.AdminOrderVVM">
+
+    <DataTemplate DataType="{x:Type home:HomeViewModel}">
+        <home:HomeUserControl />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type orderVvm:MyOrdersViewModel}">
+        <orderVvm:MyOrdersUserControl/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type book:DocumentViewModel}">
+        <book:BookUserControl/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type book:DocumentInfoViewModel}">
+        <bookInfo:BookInfoUserControl/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type searchVvm:SearchViewModel}">
+        <searchVvm:SearchUserControl/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type searchResults:SearchResultsViewModel}">
+        <searchResults:SearchResultsUserControl/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type adminOrder:AdminOrderViewModel}">
+        <adminOrder:AdminOrderUserControl/>
+    </DataTemplate>
+</ResourceDictionary>

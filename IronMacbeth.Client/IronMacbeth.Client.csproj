@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87468F18-40B7-4C6A-95B6-E799C9BE0BD6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IronMacbeth.Client</RootNamespace>
+    <AssemblyName>IronMacbeth.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AnonymousServerAdapter.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="IDocumentViewModel.cs" />
+    <Compile Include="Model\Article.cs" />
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Document.cs" />
+    <Compile Include="Model\DocumentsSearchResults.cs" />
+    <Compile Include="Model\IDisplayable.cs" />
+    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\Newspaper.cs" />
+    <Compile Include="Model\Periodical.cs" />
+    <Compile Include="Model\SpecifiedOrderFields.cs" />
+    <Compile Include="Model\UpdateAvailibility.cs" />
+    <Compile Include="ServerAdapter.cs" />
+    <Compile Include="Model\Thesis.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="VVM\AdminOrderVVM\AdminOrderUserControl.xaml.cs">
+      <DependentUpon>AdminOrderUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\AdminOrderVVM\AdminOrderViewModel.cs" />
+    <Compile Include="VVM\AdminOrderVVM\EditOrderViewModel.cs" />
+    <Compile Include="VVM\AdminOrderVVM\EditOrderWindow.xaml.cs">
+      <DependentUpon>EditOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\ArticleItemVVM\ArticleItemUserControl.xaml.cs">
+      <DependentUpon>ArticleItemUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\ArticleItemVVM\ArticleItemViewModel.cs" />
+    <Compile Include="VVM\BookInfoVVM\BookInfoUserControl.xaml.cs">
+      <DependentUpon>BookInfoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\BookInfoVVM\DocumentInfoViewModel.cs" />
+    <Compile Include="VVM\BookVVM\BookItemUserControl.xaml.cs">
+      <DependentUpon>BookItemUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\BookVVM\BookItemViewModel.cs" />
+    <Compile Include="VVM\BookVVM\DocumentUserControl.xaml.cs">
+      <DependentUpon>DocumentUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\BookVVM\DocumentViewModel.cs" />
+    <Compile Include="VVM\EditBookVVM\Dispatch.cs" />
+    <Compile Include="VVM\EditBookVVM\EditDocumentViewModel.cs" />
+    <Compile Include="VVM\EditBookVVM\EditDocumentWindow.xaml.cs">
+      <DependentUpon>EditDocumentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\EditBookVVM\FilledFieldsInfo.cs" />
+    <Compile Include="VVM\EditDateTimeViewModel.cs" />
+    <Compile Include="VVM\EditDateTimeWindow.xaml.cs">
+      <DependentUpon>EditDateTimeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\IAvailiable.cs" />
+    <Compile Include="VVM\LogInVVM\RegisterVVM\RegisterViewModel.cs" />
+    <Compile Include="VVM\LogInVVM\RegisterVVM\RegisterWindow.xaml.cs">
+      <DependentUpon>RegisterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\MyOrdersVVM\MyOrdersItemsVVM\OrderBookItemUserControl.xaml.cs">
+      <DependentUpon>OrderBookItemUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\MyOrdersVVM\MyOrdersItemsVVM\OrderBookItemViewModel.cs" />
+    <Compile Include="VVM\MyOrdersVVM\MyOrdersUserControl.xaml.cs">
+      <DependentUpon>MyOrdersUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\MyOrdersVVM\MyOrdersViewModel.cs" />
+    <Compile Include="VVM\MyOrdersVVM\Order.cs" />
+    <Compile Include="VVM\NewspaperItemVVM\NewspaperItemUserControl.xaml.cs">
+      <DependentUpon>NewspaperItemUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\NewspaperItemVVM\NewspaperItemViewModel.cs" />
+    <Compile Include="VVM\PeriodicalItemVVM\PeriodicalItemViewModel.cs" />
+    <Compile Include="VVM\PeriodicalItemVVM\PeriodicalItemUserControl.xaml.cs">
+      <DependentUpon>PeriodicalItemUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\SearchPageViewModel\SearchFilledFields.cs" />
+    <Compile Include="VVM\SearchPageViewModel\SearchUserControl.xaml.cs">
+      <DependentUpon>SearchUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\SearchPageViewModel\SearchViewModel.cs" />
+    <Compile Include="VVM\SearchResultsVVM\SearchResultsDispatch.cs" />
+    <Compile Include="VVM\SearchResultsVVM\SearchResultsUserControl.xaml.cs">
+      <DependentUpon>SearchResultsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\SearchResultsVVM\SearchResultsViewModel.cs" />
+    <Compile Include="VVM\Home\HomeUserControl.xaml.cs">
+      <DependentUpon>HomeUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\Home\HomeViewModel.cs" />
+    <Compile Include="IPageViewModel.cs" />
+    <Compile Include="VVM\LogInVVM\LogInViewModel.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="VVM\MainVVM\MainViewModel.cs" />
+    <Compile Include="VVM\ThesisItemVVM\ThesisItemUserControl.xaml.cs">
+      <DependentUpon>ThesisItemUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\ThesisItemVVM\ThesisItemViewModel.cs" />
+    <Page Include="Themes\BureauBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="VVM\AdminOrderVVM\AdminOrderUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\AdminOrderVVM\EditOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\ArticleItemVVM\ArticleItemUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\BookInfoVVM\BookInfoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\BookVVM\BookItemUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\BookVVM\DocumentUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\EditBookVVM\EditDocumentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\EditDateTimeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\LogInVVM\RegisterVVM\RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\MyOrdersVVM\MyOrdersItemsVVM\OrderBookItemUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\MyOrdersVVM\MyOrdersUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\NewspaperItemVVM\NewspaperItemUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\PeriodicalItemVVM\PeriodicalItemUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\SearchPageViewModel\SearchUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\SearchResultsVVM\SearchResultsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\Home\HomeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\LogInVVM\LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\MainVVM\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VVM\LogInVVM\LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VVM\MainVVM\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="VVM\MainVVM\MainResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VVM\ThesisItemVVM\ThesisItemUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NoImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logoMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IronMacbeth.BFF.Contract\IronMacbeth.BFF.Contract.csproj">
+      <Project>{7147F8FD-500B-4BD9-97B2-3AD28C2496E2}</Project>
+      <Name>IronMacbeth.BFF.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

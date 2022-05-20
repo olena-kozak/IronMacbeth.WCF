@@ -1,0 +1,42 @@
+﻿<Window x:Class="IronMacbeth.Client.VVM.EditDateTimeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IronMacbeth.Client.VVM" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        x:Name="Window"
+        mc:Ignorable="d"
+        Title="Time of issueing" Height="170" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel  Grid.Row="0" Orientation="Vertical" VerticalAlignment="Bottom">
+            <TextBlock Text="Choose date and time of issueing:" Margin="5,5,0,10" />
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <xctk:DateTimePicker Margin="5,5,0,0"  Height="35" Value="{Binding ReceiveDate}"  Minimum="{Binding  Min}"/>
+        </WrapPanel>
+        <WrapPanel  
+                HorizontalAlignment="Center"
+                 VerticalAlignment="Bottom"
+                Orientation="Horizontal" 
+                 Grid.Row="2"
+                 Height="28">
+            <Button 
+                    Command="{Binding ApplyChangesCommand}"
+                    CommandParameter="{Binding ElementName=Window}"
+                    Margin="5,0"
+                    Content="Done" 
+                    Width="75"/>
+            <Button 
+                    Command="{Binding CloseCommand}"
+                    CommandParameter="{Binding ElementName=Window}"
+                    Margin="5,0"
+                    Content="Cancel" 
+                    Width="75"/>
+        </WrapPanel>
+    </Grid>
+</Window>

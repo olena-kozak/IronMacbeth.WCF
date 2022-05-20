@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="IronMacbeth.Client.VVM.ThesisItemVVM.ThesisItemUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IronMacbeth.Client.VVM.ThesisItemVVM"
+             
+             mc:Ignorable="d" d:DesignWidth="800" Height="130" BorderBrush="#FF90AAD8">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Margin="5,0,0,0" Grid.Column="2" Orientation="Vertical">
+            <WrapPanel  Height="110" >
+                <Button 
+                    Width="120"
+                    Content="More"
+                    Margin="5,50,5,0" 
+                    Height="25"
+                    Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                    CommandParameter="{Binding MoreInfoVm}"/>
+            </WrapPanel>
+        </WrapPanel>
+        <WrapPanel
+            Orientation="Vertical"
+            Grid.Column="1">
+            <WrapPanel Orientation="Horizontal">
+                <TextBlock 
+                    Margin="0,10,5,0"
+                    Text="{Binding Name}"
+                    Foreground="CornflowerBlue" 
+                    FontWeight="Bold" 
+                    FontSize="13"/>
+                <TextBlock 
+                    Margin="0,10,5,0"
+                    Text="{Binding Author}"
+                    Foreground="CornflowerBlue" 
+                    FontWeight="Bold" 
+                    FontSize="13"/>
+                <TextBlock 
+                    Margin="0,10,5,0"
+                    Text="{Binding IssueNumber}"
+                    Foreground="CornflowerBlue" 
+                    FontWeight="Bold" 
+                    FontSize="13"/>
+            </WrapPanel>
+            <WrapPanel Margin="0,5,0,0">
+                <Label Margin="0,0,5,0" Content="Name:" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="0,0,5,0" Content="{Binding Name}" FontSize="13" Foreground="DimGray"/>
+            </WrapPanel>
+            <WrapPanel>
+                <Label Margin="0,5,5,0" Content="Author:" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="0,5,5,0" Content="{Binding Author}" FontSize="13" Foreground="DimGray"/>
+            </WrapPanel>
+            <WrapPanel>
+                <WrapPanel>
+                    <Label Margin="0,5,5,0" Content="Type:" FontSize="13" Foreground="DimGray"/>
+                    <Label Margin="5,5,0,0" Content="{Binding TypeOfDocument}"  FontSize="13" Foreground="DimGray" FontWeight="Bold"/>
+                </WrapPanel>
+            </WrapPanel>
+        </WrapPanel>
+    </Grid>
+</UserControl>

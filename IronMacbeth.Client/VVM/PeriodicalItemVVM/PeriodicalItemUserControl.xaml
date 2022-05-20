@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="IronMacbeth.Client.VVM.PeriodicalItemVVM.PeriodicalItemUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IronMacbeth.Client.VVM.PeriodicalItemVVM"
+             mc:Ignorable="d" d:DesignWidth="800" Height="130" BorderBrush="#FF90AAD8">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+        <Image
+            Grid.Column="0"
+            Source="{Binding BitmapImage}"
+            Width="100" 
+            Margin="5,5,0,5" 
+            HorizontalAlignment="Left"/>
+
+        <WrapPanel Margin="5,0,0,0" Grid.Column="2" Orientation="Vertical">
+            <WrapPanel  Height="110" >
+                <Button 
+                    Width="120"
+                    Content="More"
+                    Margin="5,50,5,0" 
+                    Height="25"
+                    Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                    CommandParameter="{Binding MoreInfoVm}"/>
+            </WrapPanel>
+        </WrapPanel>
+        <WrapPanel
+            Orientation="Vertical"
+            Grid.Column="1">
+            <WrapPanel Orientation="Horizontal">
+                <TextBlock 
+                    Margin="0,10,5,0"
+                    Text="{Binding Name}"
+                    Foreground="CornflowerBlue" 
+                    FontWeight="Bold" 
+                    FontSize="13"/>
+                <Label Margin="5,10,5,0" Content="№" FontSize="13" Foreground="DimGray"/>
+                <TextBlock 
+                    Margin="0,5,5,0"
+                    Text="{Binding IssueNumber}"
+                    Foreground="CornflowerBlue" 
+                    FontWeight="Bold" 
+                    FontSize="13"/>
+            </WrapPanel>
+            <WrapPanel Margin="0,5,0,0">
+                <Label Content="Name:" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="5,0,5,0" Content="{Binding Name}" FontSize="13" Foreground="DimGray"/>
+                <Label Content="•" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="5,0,5,0" Content="IssueNumber:" FontSize="13" Foreground="DimGray"/>
+                <Label Content="{Binding IssueNumber}" Margin="5,0" FontSize="13" Foreground="DimGray"/>
+            </WrapPanel>
+
+            <WrapPanel>
+                <Label Margin="0,5,5,0" Content="Type:" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="5,5,0,0" Content="{Binding TypeOfDocument}"  FontSize="13" Foreground="DimGray" FontWeight="Bold"/>
+            </WrapPanel>
+            <WrapPanel>
+                <Label Margin="0,5,0,0" Content="Number of offerings:" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="0,5,0,0" Content="{Binding Availiability}" FontSize="13" Foreground="DimGray"/>
+                <Label  Margin="5,5,5,0" Content="•" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="5,5,5,0" Content="Location:" FontSize="13" Foreground="DimGray"/>
+                <Label Margin="5,5,5,0" Content="{Binding Location}" FontSize="13" Foreground="DimGray"/>
+            </WrapPanel>
+
+            <WrapPanel>
+                <WrapPanel Margin="0,5,0,0">
+                    <Label Margin="0,0,5,0" Content="Rent perice:" FontSize="13" Foreground="DimGray"/>
+                    <Label Content="{Binding RentPrice}" Margin="5,0" FontSize="13" Foreground="DimGray"/>
+                    <Label Content="₴" Foreground="DimGray" FontWeight="DemiBold"  FontSize="13"/>
+                </WrapPanel>
+            </WrapPanel>
+        </WrapPanel>
+    </Grid>
+</UserControl>

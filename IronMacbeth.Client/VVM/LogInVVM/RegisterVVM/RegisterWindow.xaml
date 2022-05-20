@@ -1,0 +1,109 @@
+﻿<Window x:Class="IronMacbeth.Client.VVM.LogInVVM.RegisterVVM.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          x:Name="Window"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IronMacbeth.Client.VVM.LogInVVM.RegisterVVM"
+       
+        mc:Ignorable="d"
+       Title="RegisterWindow" 
+        Height="300" 
+        Width="250"
+        MinHeight="112"
+        MaxHeight="400"
+        MinWidth="200"
+        MaxWidth="243">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Grid.Row="1" Grid.Column="0"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="Login:" Grid.Column="0" />
+        </WrapPanel>
+        <WrapPanel Grid.Column="1" Grid.Row="1"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBox  
+             Height="23" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top" 
+            Width="120" 
+           
+            Text="{Binding Login,UpdateSourceTrigger=PropertyChanged}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2" Grid.Column ="0" Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="Password:"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2" Grid.Column ="1" Margin="10,0,0,0"  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <PasswordBox 
+             Height="23" 
+            VerticalAlignment="Bottom"  
+            PasswordChanged="PasswordBox_OnPasswordChanged" 
+            HorizontalAlignment="Left" 
+            Width="120">
+                <PasswordBox.InputBindings>
+                    <KeyBinding Command="{Binding RegisterCommand}" CommandParameter="{Binding ElementName=Window}" Key="Enter"/>
+                </PasswordBox.InputBindings>
+            </PasswordBox>
+        </WrapPanel>
+        <WrapPanel  Grid.Row="4" Grid.Column="0"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="Name:"  />
+        </WrapPanel>
+        <WrapPanel  Grid.Column="1" Grid.Row="4" Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+            <TextBox 
+             Height="23" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top" 
+            Width="120" 
+            Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="5"  Grid.Column="0"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="Surname:"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="5"  Grid.Column="1"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBox 
+             Height="23" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top" 
+            Width="120" 
+            Text="{Binding Surname,UpdateSourceTrigger=PropertyChanged}"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="0"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"
+           >
+            <TextBlock Text="Phone number:"   />
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="1"  Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left"
+           >
+            <TextBox    Text="{Binding PhoneNumber, StringFormat={}{0:(000)###-####}}"
+                         Height="23" 
+            TextWrapping="Wrap"  
+            VerticalAlignment="Top" 
+            Width="120" />
+        </WrapPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="6" Grid.ColumnSpan="2"  >
+            <Button Content="Register" 
+                    Margin="0,0,5,0"
+                  Height="23" 
+                  Width="80"
+            Command="{Binding RegisterCommand}"
+                       CommandParameter="{Binding ElementName=Window}"/>
+            <Button 
+            Margin="5,0,0,0"
+            Content="Close" 
+            Height="23" 
+            Width="80"
+            Command="{Binding CloseCommand}"
+            CommandParameter="{Binding ElementName=Window}"/>
+        </StackPanel>
+    </Grid>
+</Window>

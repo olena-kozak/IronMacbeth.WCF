@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="IronMacbeth.Client.VVM.SearchResultsVVM.SearchResultsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IronMacbeth.Client.VVM.SearchResultsVVM"
+              xmlns:bookVvm="clr-namespace:IronMacbeth.Client.VVM.BookVVM"
+             xmlns:articleVvm ="clr-namespace:IronMacbeth.Client.VVM.ArticleItemVVM"
+             xmlns:periodicalVvm ="clr-namespace:IronMacbeth.Client.VVM.PeriodicalItemVVM"
+             xmlns:thesisVvm ="clr-namespace:IronMacbeth.Client.VVM.ThesisItemVVM"
+             xmlns:newspaperVvm = "clr-namespace:IronMacbeth.Client.VVM.NewspaperItemVVM"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700">
+    <DockPanel VerticalAlignment="Stretch">
+        <Grid Background="#FFB8DBF1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <WrapPanel  Visibility="{Binding ButtonsVisibility}"
+            DockPanel.Dock="Bottom"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom">
+            <Button 
+                Command="{Binding AddtoMyOrdersCommand}"
+                Width="150"
+                Margin="5,10,10,10"
+                Content="Add to my books" Background="White"/>
+
+            <Button 
+                Command="{Binding OrderToReadingRoomCommand}"
+                Width="150"
+                Margin="5,10,10,10"
+                Content="Order in reading room" Background="White"/>
+        </WrapPanel>
+        <WrapPanel
+            Margin="5"
+            DockPanel.Dock="Top"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            <TextBlock
+                Text="Search: "/>
+            <TextBox
+                Width="130"
+                Text="{Binding Search,UpdateSourceTrigger=PropertyChanged}"/>
+        </WrapPanel>
+        <ListView
+            DockPanel.Dock="Top"
+            ScrollViewer.CanContentScroll="False"
+            ItemsSource="{Binding Items}"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+            SelectionMode="Single">
+
+            <ListView.Resources>
+                <DataTemplate DataType="{x:Type bookVvm:BookItemViewModel}">
+                    <bookVvm:BookItemUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type articleVvm:ArticleItemViewModel}">
+                    <articleVvm:ArticleItemUserControl/>
+                </DataTemplate>
+                <DataTemplate   DataType="{x:Type thesisVvm:ThesisItemViewModel}">
+                    <thesisVvm:ThesisItemUserControl/>
+                </DataTemplate>
+                <DataTemplate  DataType ="{x:Type periodicalVvm:PeriodicalItemViewModel}">
+                    <periodicalVvm:PeriodicalItemUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type newspaperVvm:NewspaperItemViewModel}">
+                    <newspaperVvm:NewspaperItemUserControl/>
+                </DataTemplate>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,74 @@
+﻿<Window x:Class="IronMacbeth.Client.VVM.AdminOrderVVM.EditOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        x:Name="Window"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IronMacbeth.Client.VVM.AdminOrderVVM" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        
+        mc:Ignorable="d"
+        Title="EditOrderWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2*"/>
+
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <WrapPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock
+                    VerticalAlignment="Center" 
+                     TextWrapping="Wrap"
+                    Text="Status of order: "/>
+                <ComboBox Name="TypeList" Height="24" Width="145" VerticalAlignment="Top" BorderBrush="White"  
+                              ItemsSource="{Binding AvailibleItemTypes}"
+                              SelectedItem="{Binding  Status}">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                </ComboBox>
+            </WrapPanel>
+            <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1">
+                <TextBlock Text="Date ro receive:" Margin="0,10,0,10"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <xctk:DateTimePicker Height="30" Value="{Binding ReceiveDate}"  Minimum="{Binding  Min}"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" >
+                <TextBlock Text="Date to return:" Margin="0,10,0,10"/>
+            </WrapPanel>
+            <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <xctk:DateTimePicker Height="30" Value="{Binding DateOfReturning}"  Minimum="{Binding  MinDateReturn}"/>
+            </WrapPanel>
+        </WrapPanel>
+        <WrapPanel  
+                HorizontalAlignment="Center"
+                 VerticalAlignment="Bottom"
+                Orientation="Horizontal" 
+                 Grid.Row="2"
+            Grid.ColumnSpan="3"
+                 Height="28">
+            <Button 
+                    Command="{Binding ApplyChangesCommand}"
+                    CommandParameter="{Binding ElementName=Window}"
+                    Margin="5,0"
+                    Content="Done" 
+                    Width="75"/>
+            <Button 
+                    Command="{Binding CancelCommand}"
+                    CommandParameter="{Binding ElementName=Window}"
+                    Margin="5,0"
+                    Content="Cancel" 
+                    Width="75"/>
+        </WrapPanel>
+    </Grid>
+</Window>

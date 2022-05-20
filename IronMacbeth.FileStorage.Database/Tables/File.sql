@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[File]
+(
+    [FileId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,    
+    [Path] NVARCHAR (260) NOT NULL,
+    [Size] BIGINT NOT NULL,
+    [CreatedTimestamp] DATETIME2 NOT NULL
+)
